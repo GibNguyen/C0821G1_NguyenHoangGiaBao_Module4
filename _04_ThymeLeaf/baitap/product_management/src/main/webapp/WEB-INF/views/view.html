@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>PRODUCT</h2>
+<a th:href="@{/create}">Create Product</a>
+<table border="1">
+   <tr>
+       <td>ID</td>
+       <td>Name</td>
+       <td>Price</td>
+       <td>Producer</td>
+   </tr>
+    <tr th:each="studentObj,iter : ${productListController}">
+        <td th:text="${studentObj.id}"></td>
+        <td th:text="${studentObj.name}"></td>
+        <td th:text="${studentObj.price}"></td>
+        <td th:text="${studentObj.producer}"></td>
+        <a th:href="@{/delete}">Delete</a>
+        <a th:href="@{/edit}">Edit</a>
+    </tr>
+</table>
+</body>
+</html>
