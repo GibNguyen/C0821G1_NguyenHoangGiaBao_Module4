@@ -19,8 +19,8 @@
         <td th:text="${studentObj.name}"></td>
         <td th:text="${studentObj.price}"></td>
         <td th:text="${studentObj.producer}"></td>
-        <a th:href="@{/delete}">Delete</a>
-        <a th:href="@{/edit}">Edit</a>
+        <td><a th:href="@{/delete(idDelete=${studentObj.getId()})}">Delete</a></td>
+        <Td><a th:href="@{/edit(idEdit=${studentObj.getId()})}">Edit</a></Td>
     </tr>
 </table>
 </body>
