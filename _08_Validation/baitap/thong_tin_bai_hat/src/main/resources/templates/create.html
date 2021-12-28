@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<H1>Thêm bài hát</H1>
+<form action="/create" method="post" th:object="${baihat}">
+    <p>Tên bài hát</p>
+    <input th:field="*{tenBaiHat}">
+    <p style="color: red" th:if="${#fields.hasErrors('tenBaiHat')}" th:errors="*{tenBaiHat}"></p>
+    <p>Nghệ sĩ</p>
+    <input th:field="*{ngheSi}">
+    <p style="color: red" th:if="${#fields.hasErrors('ngheSi')}" th:errors="*{ngheSi}"></p>
+    <p>Thể loại nhạc</p>
+    <input th:field="*{theLoaiNhac}">
+    <p style="color: red" th:if="${#fields.hasErrors('theLoaiNhac')}" th:errors="*{theLoaiNhac}"></p>
+<input type="submit" value="create">
+
+</form>
+</body>
+</html>

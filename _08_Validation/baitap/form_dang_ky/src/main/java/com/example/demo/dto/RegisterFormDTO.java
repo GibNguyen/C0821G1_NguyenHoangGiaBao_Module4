@@ -22,7 +22,7 @@ public class RegisterFormDTO  {
 
     @Min(value = 18,message = "tuổi phải lớn hơn hoặc bằng 18")
     private int age;
-    
+
     private String email;
 
     public RegisterFormDTO() {
