@@ -19,6 +19,8 @@
     <p>Detail:</p>
     <p th:text="${product.detail}" th:field="*{detail}"></p>
     <input type="hidden" th:field="*{id}" th:value="${product.detail}">
+    <p>Nhập số lượng muốn mua</p>
+    <input type="text" th:field="*{quantity}">
     <button type="submit">Add</button>
 </form>
 

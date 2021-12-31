@@ -17,10 +17,11 @@
         <td th:text="${product.id}"></td>
         <td th:text="${product.name}"></td>
         <td th:text="${product.price}"></td>
-        <td>
-            <input type="number">
-        </td>
+        <td th:text="${product.quantity}"></td>
+        <td><a th:href="@{delete(idDelete=${product.getId()})}">Delete</a></td>
     </tr>
 </table>
+<p style="color: red">Sum</p>
+<p th:text="${sum}"> : </p>
 </body>
 </html>

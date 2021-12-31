@@ -21,7 +21,7 @@ import java.util.List;
 public class ProductController {
 
     @ModelAttribute("productBag")
-    public List<Product> createProductBag(){
+    public List<Product> createProductBag() {
         return new ArrayList<>();
     }
 
@@ -30,34 +30,54 @@ public class ProductController {
     IProductService productService;
 
     @GetMapping("")
-    public String viewPage(Model model, @RequestParam(value = "page", defaultValue = "0")int page){
+    public String viewPage(Model model, @RequestParam(value = "page", defaultValue = "0") int page) {
         Sort sort = Sort.by("id").descending();
-        Page<Product> productPage = productService.findAll(PageRequest.of(page,3,sort));
+        Page<Product> productPage = productService.findAll(PageRequest.of(page, 3, sort));
         model.addAttribute("productPage", productPage);
         return "/view";
     }
 
     @PostMapping("detail/add")
-    public String addToProductBag(@RequestParam("id")Integer id, @ModelAttribute("productBag")List<Product> products, RedirectAttributes redirectAttributes){
+    public String addToProductBag(@RequestParam("id") Integer id, @ModelAttribute("productBag") List<Product> products, RedirectAttributes redirectAttributes, @RequestParam("quantity") int quantity) {
         Product product = productService.findById(id);
+        product.setQuantity(quantity);
         products.add(product);
-        for(Product product1:products){
-            System.out.println(product1.getName());
-        }
-        redirectAttributes.addFlashAttribute("msg","Add Product Bag successful!");
+        redirectAttributes.addFlashAttribute("msg", "Add Product Bag successful!");
         return "redirect:/";
     }
-    @GetMapping ("detail")
-    public String detailProduct(@RequestParam(name = "id")Integer id, Model model){
+
+    @GetMapping("detail")
+    public String detailProduct(@RequestParam(name = "id") Integer id, Model model) {
         Product product = productService.findById(id);
-        model.addAttribute("product",product);
+        model.addAttribute("product", product);
         return "/detail";
     }
+
     @GetMapping("list")
-    public String productListPage (@ModelAttribute("productBag")List<Product> products, Model model){
+    public String productListPage(@ModelAttribute("productBag") List<Product> products, Model model) {
+        double sum=0;
+        for(Product product:products){
+            sum = sum+(product.getPrice()*product.getQuantity());
+        }
+        model.addAttribute("sum",sum);
         model.addAttribute("products", products);
         return "/product-list";
     }
 
+    @GetMapping("delete")
+    public String deleteProductList(@ModelAttribute("productBag") List<Product> products, Model model, @RequestParam("idDelete") int idDelete) {
+        for(int i=0;i<products.size();i++){
+            if(products.get(i).getId()==idDelete){
+                products.remove(products.get(i));
+            }
+        }
+        double sum=0;
+        for(Product product:products){
+            sum = sum+(product.getPrice()*product.getQuantity());
+        }
+        model.addAttribute("sum",sum);
+        model.addAttribute("products", products);
+        return "/product-list";
+    }
 }
 

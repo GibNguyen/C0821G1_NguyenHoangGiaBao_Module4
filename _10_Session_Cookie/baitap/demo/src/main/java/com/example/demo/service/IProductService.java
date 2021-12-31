@@ -10,4 +10,5 @@ public interface IProductService {
     Page<Product> findAll(PageRequest of);
 
     Product findById(Integer id);
+
 }

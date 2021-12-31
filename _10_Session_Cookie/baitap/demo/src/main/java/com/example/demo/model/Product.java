@@ -12,16 +12,20 @@ public class Product {
     private String name;
     private Double price;
     private String detail;
+    private int quantity;
 
     public Product() {
     }
 
-    public Product(Integer id, String name, Double price, String detail) {
+    public Product(Integer id, String name, Double price, String detail, int quantity) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.detail = detail;
+        this.quantity = quantity;
     }
+
+
 
     public Integer getId() {
         return id;
@@ -53,5 +57,13 @@ public class Product {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
