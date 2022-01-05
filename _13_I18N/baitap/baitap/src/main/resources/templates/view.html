@@ -44,23 +44,23 @@
     </div>
 </nav>
 <h1 th:text="#{list.title}"></h1>
-<form action="view" method="get">
+<form action="/view" method="get">
     <select name="lang">
         <option value="vi">Vietnamese</option>
         <option value="en">English</option>
     </select>
+    <button type="submit">Submit</button>
 </form>
-<button type="submit">Submit</button>
 <table class="table">
     <a href="/create">Create</a>
     <thead>
     <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Tên</th>
-        <th scope="col">Ngày Sinh</th>
-        <th scope="col">Số điện thoại</th>
-        <th scope="col">Delete</th>
-        <th scope="col">Edit</th>
+        <th scope="col" th:text="#{list.id}"></th>
+        <th scope="col" th:text="#{list.name}"></th>
+        <th scope="col" th:text="#{list.dob}"></th>
+        <th scope="col" th:text="#{list.phone}"></th>
+        <th scope="col" th:text="#{list.actiondelete}"></th>
+        <th scope="col" th:text="#{list.actionedit}"></th>
     </tr>
     </thead>
     <tbody>
