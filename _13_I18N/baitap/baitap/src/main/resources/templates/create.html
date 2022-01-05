@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<h1>Thêm mới khách hàng</h1>
+<form action="create" method="post" th:object="${khachhang}">
+    <div class="mb-3">
+        <label for="id" class="form-label">ID</label>
+        <input th:field="*{id}"  class="form-control" id="id" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="ten" class="form-label">Tên</label>
+        <input th:field="*{tenKH}"  class="form-control" id="ten">
+    </div>
+    <div class="mb-3">
+        <label for="ngaysinh" class="form-label">Ngày Sinh</label>
+        <input th:field="*{ngaySinh}"  class="form-control" id="ngaysinh" >
+    </div>
+    <div class="mb-3">
+        <label for="sodienthoai" class="form-label">Số Điện thoại</label>
+        <input th:field="*{soDienThoai}"  class="form-control" id="sodienthoai">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

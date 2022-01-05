@@ -1,0 +1,9 @@
+package com.example.quan_ly_khach_hang.repository;
+
+import com.example.quan_ly_khach_hang.model.KhachHang;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IKhachHangRepository extends JpaRepository<KhachHang,Integer> {
+}
