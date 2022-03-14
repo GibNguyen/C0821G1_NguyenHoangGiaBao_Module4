@@ -21,6 +21,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../_08_Validation/baitap/thong_tin_bai_hat" />
   </component>
   <component name="RunManager">
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -42,6 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1640914460816</updated>
       <workItem from="1640914467487" duration="433000" />
+      <workItem from="1642473128782" duration="49000" />
     </task>
     <servers />
   </component>
@@ -49,6 +51,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1642473142820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1642473142820" />
     <state x="342" y="180" key="new project wizard" timestamp="1640914908702">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
